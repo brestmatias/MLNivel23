@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/brestmatias/MLNivel23#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
   },
   "devDependencies": {
     "nodemon": "^1.19.1"
