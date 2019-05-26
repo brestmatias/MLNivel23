@@ -5,9 +5,7 @@ module.exports = function(app) {
   app.route('/mutant/')
     .post(mutant.checkMutant);
 
-    /*
-  app.route('/tasks/:taskId')
-    .get(mutant.read_a_task)
-    .put(mutant.update_a_task)
-    .delete(mutant.delete_a_task);*/
+    
+  app.route('/stats')
+    .get(mutant.stats);
 };
