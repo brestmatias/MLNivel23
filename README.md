@@ -5,6 +5,7 @@ Repo para código Nivel2 y Nivel3
     -Node
     -Express
     -Nodemon
+    npm install mongoose --save
 
 --HOSTEADO:
     https://app-mutantchecker.herokuapp.com/
@@ -36,3 +37,7 @@ Repo para código Nivel2 y Nivel3
         {"dna":["TTGCGA","CTGTGC","TTATGT","AGAAGG","TCCCAA","TCACTG"]};
         --humano-- Rta 403
         {"dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"]};
+
+
+---BDD 
+    mongodb://magneto:magneto1@ds261626.mlab.com:61626/mutantchecher
