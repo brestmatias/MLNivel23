@@ -6,7 +6,6 @@ var express = require('express'),
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-
 var routes = require('./api/routes/mutantRoutes');
 routes(app); 
 app.listen(port);
