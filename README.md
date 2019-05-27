@@ -1,7 +1,17 @@
 # MLNivel23
 Repo para código Nivel2 y Nivel3
 
-1 - Instrucciones para ejecutar API:
+1 - Test - Codecoverage
+
+    Framework utilizado mocha + istambul
+    las pruebas unitarias corren con:
+        npm test
+    si se desea prueba + code coverage
+       npm run test-with-coverage
+    
+    o instalar mocha toolbar en vscode
+    
+2 - Instrucciones para ejecutar API:
     La API se encuentra hosteada en heroku, integrada directamente con el repositorio actual.
     Cualquier cambio sobre el master del repo desata la compilación y despliegue del la misma.
 
@@ -58,3 +68,15 @@ Repo para código Nivel2 y Nivel3
 
 ---BDD 
     mongodb://magneto:magneto1@ds261626.mlab.com:61626/mutantchecher
+
+--TDD coverage
+    framework utilizado mocha - istambul
+    para Visual studio code instalar mocha toolbar
+    si no correr npm test para ejecutar las pruebas
+
+Frameworks modules libraries
+    mocha   npm i mocha --save-dev
+    mongoose
+    nodemon
+    express
+    istambul npm i nyc --save-dev
