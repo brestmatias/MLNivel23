@@ -33,3 +33,13 @@ exports.getTanspose=function(matrix){
     }
     return transpose;
 };
+
+
+exports.getAllDiag=function(matrix){
+    var diag = [];
+    for(var i=0;i<matrix.length;i++){
+        var row=matrix[i];
+        diag.push(row[matrix.length-(i+1)]);
+    }
+    return diag.join("");
+};

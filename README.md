@@ -38,7 +38,8 @@ Repo para código Nivel2 y Nivel3
     
 --LOCAL:
     1- Descargar Repo
-    2-npm start
+    2-npm install
+    3-npm start
     http://localhost:3000
 
     

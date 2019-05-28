@@ -34,8 +34,7 @@ exports.stats=function(req,res){
                 else
                     humans=element.count;
             });
-            if(humans>0)
-                ratio=mutants/humans;
+            if(humans>0) ratio=mutants/humans;
             
             res.status(200).jsonp({
                 count_mutant_dna:mutants,
