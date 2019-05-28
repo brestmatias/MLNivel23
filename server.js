@@ -8,7 +8,10 @@ var express = require('express'),
   
 mongoose.Promise = global.Promise;
 console.log('Conecting to Data Base...');
-mongoose.connect('mongodb://magneto:magneto1@ds261626.mlab.com:61626/mutantchecker'); 
+const uri='mongodb://magneto:magneto1@ds261626.mlab.com:61626/mutantchecker';
+mongoose.connect(uri, {useNewUrlParser: true } ).then(
+  err => { console.error(err); }
+);; 
   
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

@@ -1,6 +1,11 @@
 var assert = require('assert');
 var matrixHelper = require('../api/helpers/matrixHelper');
 
+var matrix1=["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"];
+console.log(matrixHelper.getRight2Diagonal(matrix1));
+
+console.log(matrixHelper.getAllDiags(matrix1));
+
 describe('MatrixHelper', function() {
   describe('#getLeftDiag', function() {
     it('should return matrix left diag', function() {
