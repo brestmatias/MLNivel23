@@ -4,13 +4,12 @@
 exports.getTanspose=function(matrix){
     var transpose=[];
     for(var row in matrix){
-        var splited=matrix[row].split("");
-        for(var c in splited){
+        for(var c in matrix[row]){
             if(transpose[c]==undefined)
             {
-                transpose[c]=splited[c];
+                transpose[c]=matrix[row][c];
             }else{
-                transpose[c]+=splited[c];
+                transpose[c]+=matrix[row][c];
             }
         }
 
