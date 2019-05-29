@@ -2,14 +2,15 @@
 Repo para código Nivel2 y Nivel3
 
 1 - Clonado y ejecución local
-    a-Necesario nodejs, git y tener acceso (Gateway/proxy habilitado) a mlab.com puerto 61626
-    b-Clonar o descargar repositorio  https://github.com/brestmatias/MLNivel23.git
-    c-Entrar al directorio clonado y ejecutar:
-        npm install
-        npm test
-        npm start
-    d-Url local de acceso:
-        http://localhost:3000
+
+    a-  Necesario nodejs, git y tener acceso (Gateway/proxy habilitado) a mlab.com puerto 61626
+    b-  Clonar o descargar repositorio  https://github.com/brestmatias/MLNivel23.git
+    c-  Entrar al directorio clonado y ejecutar:
+            npm install
+            npm test
+            npm start
+    d-  Url local de acceso:
+            http://localhost:3000
         
 2 - Test - Codecoverage
 
@@ -19,14 +20,16 @@ Repo para código Nivel2 y Nivel3
     b- UnitTest + CodeCoverage
        npm run test-with-coverage
     
-3 - Instrucciones para ejecutar API:
+3 - Instrucciones para ejecutar API
+
     La API se encuentra hosteada en heroku, integrada directamente con el repositorio actual.
     Cualquier cambio sobre el master del repo desata la compilación y despliegue del la misma.
 
     URL: https://app-mutantchecker.herokuapp.com/
 
-    a-Servicio /mutant: 
-        permite detectar si un humano es mutante enviando en el cuerpo del HTTP POST
+    a-  Servicio /mutant
+    
+        Permite detectar si un humano es mutante enviando en el cuerpo del HTTP POST
         un JSON con el formato:
             {"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}
 
@@ -35,8 +38,9 @@ Repo para código Nivel2 y Nivel3
         *En el caso de no recibir array de dna en el body el servicio responde con HTTO 500 
         (No DNA secuence detected!').
     
-    b-Servicio /stats:
-        devuelve un JSON indicando cantidad de adns humanos y mutantes consultados,
+    b-  Servicio /stats
+    
+        Devuelve un JSON indicando cantidad de adns humanos y mutantes consultados,
         además de un ratio mutante/humanos
         
         URL: https://app-mutantchecker.herokuapp.com/stats  [GET]
@@ -50,6 +54,7 @@ Repo para código Nivel2 y Nivel3
     
 
 --TEST POSTMAN:
+
     a- Servicio /mutant:
         URL: https://app-mutantchecker.herokuapp.com/mutant/
         URL: http://localhost:3000/mutant
@@ -72,15 +77,18 @@ Repo para código Nivel2 y Nivel3
             {"dna":["ATGCGA","CAGTGC","TTATTT","AGACGG","GCGTCA","TCACTG"]};
 
 
----BDD 
+BDD 
+
     mongodb://magneto:magneto1@ds261626.mlab.com:61626/mutantchecher
 
---TDD coverage
+TDD coverage
+
     framework utilizado mocha - istambul
     para Visual studio code instalar mocha toolbar
     si no correr npm test para ejecutar las pruebas
 
 Frameworks modules libraries
+
     mocha   npm i mocha --save-dev
     mongoose
     nodemon
