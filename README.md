@@ -87,6 +87,18 @@ TDD coverage
     framework utilizado mocha - istambul
     para Visual studio code instalar mocha toolbar
     si no correr npm test para ejecutar las pruebas
+    
+    Codecoverage output
+    
+    -------------------|----------|----------|----------|----------|-------------------|
+    File               |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+    -------------------|----------|----------|----------|----------|-------------------|
+    All files          |      100 |    95.45 |      100 |      100 |                   |
+     helpers           |      100 |      100 |      100 |      100 |                   |
+      matrixHelper.js  |      100 |      100 |      100 |      100 |                   |
+     services          |      100 |    83.33 |      100 |      100 |                   |
+      mutantService.js |      100 |    83.33 |      100 |      100 |                10 |
+    -------------------|----------|----------|----------|----------|-------------------
 
 Frameworks modules libraries
 
