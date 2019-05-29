@@ -7,19 +7,7 @@ function checkMutant(secuence){
 
 this.isMutant = function (matrix) {
     let count=0;
-
-    matrixHelper.getAllDiags(matrix).forEach(element => {
-        if(checkMutant(element))
-            count++;
-    });
-
-    matrix.forEach(element => {
-        if(checkMutant(element))
-            count++
-    });
-    matrixHelper.getTanspose(matrix).forEach(element => {
-        if(checkMutant(element))
-            count++;
-    });
-    return count>1;
+    return((count+=matrix.map((val)=>checkMutant(val)).filter(x => x).length)>1)? true:
+    ((count+=matrixHelper.getAllDiags(matrix).map((val)=>checkMutant(val)).filter(x => x).length)>1)?true:
+    ((count+=matrixHelper.getTranspose(matrix).map((val)=>checkMutant(val)).filter(x => x).length)>1)?true:false;
   };

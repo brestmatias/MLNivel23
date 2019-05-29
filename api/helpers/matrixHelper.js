@@ -1,20 +1,8 @@
 /**
  * Obtiene la traspuesta de la matriz pasada por parámetro
  */
-exports.getTanspose=function(matrix){
-    var transpose=[];
-    for(var row in matrix){
-        for(var c in matrix[row]){
-            if(transpose[c]==undefined)
-            {
-                transpose[c]=matrix[row][c];
-            }else{
-                transpose[c]+=matrix[row][c];
-            }
-        }
-
-    }
-    return transpose;
+exports.getTranspose=function(matrix){
+    return matrix.map((col, c) => matrix.map((row, r) => matrix[r][c]).join(""));
 };
 
 /**

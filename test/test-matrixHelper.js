@@ -21,11 +21,11 @@ describe('MatrixHelper', function() {
     it('Should return matrix trasposed', function() {
         var matrix=["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"];
         var trasposed=[ 'ACTACT', 'TATGCC', 'GGAACA', 'CTTACC', 'GGGGTT', 'ACTGAG' ];
-        assert.deepEqual(matrixHelper.getTanspose(matrix), trasposed);
+        assert.deepEqual(matrixHelper.getTranspose(matrix), trasposed);
     });
     it('Transpose X2 should return original matrix', function() {
       var matrix=["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"];
-      assert.deepEqual(matrixHelper.getTanspose(matrixHelper.getTanspose(matrix)), matrix);
+      assert.deepEqual(matrixHelper.getTranspose(matrixHelper.getTranspose(matrix)), matrix);
     });
   });
 });
