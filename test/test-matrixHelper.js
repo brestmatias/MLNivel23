@@ -3,7 +3,7 @@ var matrixHelper = require('../api/helpers/matrixHelper');
 
 describe('MatrixHelper', function() {
 
-  describe('#getRightDiag', function() {
+  describe('#getAllDiags', function() {
     it('should return all matrix diagonals 6x6', function() {
         var matrix=["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"];
         var response=[ 'GTGG','TGTGA','AAAATG','CTACT','TGCC','CGTA','GTAGC','AGTACT','CGACC','TGCA' ]
@@ -18,10 +18,14 @@ describe('MatrixHelper', function() {
   });
 
   describe('#getTanspose', function() {
-    it('should return matrix trasposed', function() {
+    it('Should return matrix trasposed', function() {
         var matrix=["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"];
         var trasposed=[ 'ACTACT', 'TATGCC', 'GGAACA', 'CTTACC', 'GGGGTT', 'ACTGAG' ];
         assert.deepEqual(matrixHelper.getTanspose(matrix), trasposed);
+    });
+    it('Transpose X2 should return original matrix', function() {
+      var matrix=["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"];
+      assert.deepEqual(matrixHelper.getTanspose(matrixHelper.getTanspose(matrix)), matrix);
     });
   });
 });

@@ -4,7 +4,7 @@ var mutantService= require('../api/services/mutantService');
 describe('MutantService', function() {
     describe('#isMutant', function() {
       it('Checking mutant secuence 1 6X6, should return TRUE', function() {
-          var matrix=["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"];
+        var matrix=["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"];
         assert.equal(mutantService.isMutant(matrix),true);
       });
     
@@ -15,22 +15,22 @@ describe('MutantService', function() {
 
       it('Checking mutant secuence 3 6X6, should return TRUE', function() {
         var matrix=["ACTACT","TATGCC","GGAACA","CTTACC","GGGGTT","ACTGAG"];
-      assert.equal(mutantService.isMutant(matrix),true);
+        assert.equal(mutantService.isMutant(matrix),true);
       });
 
       it('Checking mutant secuence 4 6X6, should return TRUE', function() {
         var matrix=["AGCGCG","ACGCTC","AGCTCG","ACGCGG","TGCGCG","GCGCGG"];
-      assert.equal(mutantService.isMutant(matrix),true);
+        assert.equal(mutantService.isMutant(matrix),true);
       });
 
       it('Checking mutant secuence 5 6X6, TWO DIAGONALS, should return TRUE', function() {
         var matrix=["AATGCT","TAGCTG","TAATAT","ATTGGG","AGTGCT","CGTTCG"];
-      assert.equal(mutantService.isMutant(matrix),true);
+        assert.equal(mutantService.isMutant(matrix),true);
       });
 
       it('Checking human secuence, should return FALSE', function() {
         var matrix=["GTGCGA","CAGTGC","TTATGT","AGAAGG","CCTCTA","TCACTG"];
-      assert.equal(mutantService.isMutant(matrix),false);
+        assert.equal(mutantService.isMutant(matrix),false);
         });
     });
 

@@ -1,17 +1,25 @@
 # MLNivel23
 Repo para código Nivel2 y Nivel3
 
-1 - Test - Codecoverage
+1 - Clonado y ejecución local
+    a-Necesario nodejs, git y tener acceso (Gateway/proxy habilitado) a mlab.com puerto 61626
+    b-Clonar o descargar repositorio  https://github.com/brestmatias/MLNivel23.git
+    c-Entrar al directorio clonado y ejecutar:
+        npm install
+        npm test
+        npm start
+    d-Url local de acceso:
+        http://localhost:3000
+        
+2 - Test - Codecoverage
 
     Framework utilizado mocha + istambul
-    las pruebas unitarias corren con:
+    a- Las pruebas unitarias corren con:
         npm test
-    si se desea prueba + code coverage
+    b- UnitTest + CodeCoverage
        npm run test-with-coverage
     
-    o instalar mocha toolbar en vscode
-    
-2 - Instrucciones para ejecutar API:
+3 - Instrucciones para ejecutar API:
     La API se encuentra hosteada en heroku, integrada directamente con el repositorio actual.
     Cualquier cambio sobre el master del repo desata la compilación y despliegue del la misma.
 
@@ -23,9 +31,13 @@ Repo para código Nivel2 y Nivel3
             {"dna":["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"]}
 
         URL: https://app-mutantchecker.herokuapp.com/mutant [POST]
+
+        *En el caso de no recibir array de dna en el body el servicio responde con HTTO 500 
+        (No DNA secuence detected!').
     
     b-Servicio /stats:
-        devuelve un JSON indicando cantidad de adns humanos y mutantes, además de un ratio mutante/humanos
+        devuelve un JSON indicando cantidad de adns humanos y mutantes consultados,
+        además de un ratio mutante/humanos
         
         URL: https://app-mutantchecker.herokuapp.com/stats  [GET]
         JSON Response:
@@ -34,13 +46,6 @@ Repo para código Nivel2 y Nivel3
             "count_human_dna": 2,
             "ratio": 1
         } 
-
-    
---LOCAL:
-    1- Descargar Repo
-    2-npm install
-    3-npm start
-    http://localhost:3000
 
     
 
