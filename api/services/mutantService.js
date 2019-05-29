@@ -8,11 +8,10 @@ function checkMutant(secuence){
 this.isMutant = function (matrix) {
     let count=0;
 
-    if(checkMutant(matrixHelper.getLeftDiag(matrix)))
-        count++;
-
-    if(checkMutant(matrixHelper.getRightDiag(matrix)))
-        count++;
+    matrixHelper.getAllDiags(matrix).forEach(element => {
+        if(checkMutant(element))
+            count++;
+    });
 
     matrix.forEach(element => {
         if(checkMutant(element))

@@ -1,22 +1,6 @@
-
-exports.getLeftDiag=function (matrix){
-    var diag = [];
-    for(var i in matrix){
-        var row=matrix[i];
-        diag.push(row[i]);
-    }
-    return diag.join("");
-};
-
-exports.getRightDiag=function(matrix){
-    var diag = [];
-    for(var i=0;i<matrix.length;i++){
-        var row=matrix[i];
-        diag.push(row[matrix.length-(i+1)]);
-    }
-    return diag.join("");
-};
-
+/**
+ * Obtiene la traspuesta de la matriz pasada por parámetro
+ */
 exports.getTanspose=function(matrix){
     var transpose=[];
     for(var row in matrix){
@@ -34,6 +18,13 @@ exports.getTanspose=function(matrix){
     return transpose;
 };
 
+/**
+ * Obtine diagonal desde la fila y columna indicada 
+ * en la direccion= \
+ * @param {*} matrix 
+ * @param {*} col 
+ * @param {*} row 
+ */
 function getDiagFromRightUper(matrix,col,row){
     var diag=[];
     var c=col;
@@ -43,6 +34,13 @@ function getDiagFromRightUper(matrix,col,row){
     }
     return diag.join("");
 }
+/**
+ * Obtine diagonal desde la fila y columna indicada 
+ * en la direccion= /
+ * @param {*} matrix 
+ * @param {*} col 
+ * @param {*} row 
+ */
 function getDiagFromLeftUpper(matrix,col,row){
     var diag=[];
     var c=col;
@@ -54,9 +52,10 @@ function getDiagFromLeftUpper(matrix,col,row){
     }
     return diag.join("");
 }
+
 /**
- * Obtiene todas las diagonales de la matriz que producen secuencia mayor a 4
- * 
+ * Obtiene todas las diagonales de la matriz 
+ * que producen secuencia mayor a 4
  */
 exports.getAllDiags=function (matrix){
     var allDiag=[];
@@ -74,30 +73,10 @@ exports.getAllDiags=function (matrix){
     col=0;
     row=0;
     while(col<matrix.length || row<matrix.length-1){
-        allDiag.push(getDiagFromLeftUpper(matrix,col,row));
+        var diag=getDiagFromLeftUpper(matrix,col,row)
+        if(diag.length>=4)
+            allDiag.push(diag);      
         (col<matrix.length)?col++:row++;
     }
-
-    
     return allDiag;
 };
-
-exports.getRight2Diagonal =function(m) {
-	var s, x, y, d,
-	o = [];
-	for (s = 0; s < m.length; s++) {
-	  d = [];
-	  for(y = s, x = 0; y >= 0; y--, x++)
-		d.push(m[y][x]);
-	  o.push(d);
-	}
-	for (s = 1; s < m[0].length; s++) {
-	  d = [];
-	  for(y = m.length - 1, x = s; x < m[0].length; y--, x++)
-		d.push(m[y][x]);
-	  o.push(d);
-	}
-	return o.map((array) => {
-      return array.join('');
-    });
-  }

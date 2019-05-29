@@ -7,7 +7,7 @@ describe('MutantService', function() {
           var matrix=["ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTG"];
         assert.equal(mutantService.isMutant(matrix),true);
       });
-      
+    
       it('Checking mutant secuence 2 8X8, should return TRUE', function() {
           var matrix=["AGAGAGAG","TCACACGA","AACACGAC","TCATGTCT","AACGTATA","TCGTCTCT","AGACACAC","TATTTTTT"];
         assert.equal(mutantService.isMutant(matrix),true);
@@ -20,6 +20,11 @@ describe('MutantService', function() {
 
       it('Checking mutant secuence 4 6X6, should return TRUE', function() {
         var matrix=["AGCGCG","ACGCTC","AGCTCG","ACGCGG","TGCGCG","GCGCGG"];
+      assert.equal(mutantService.isMutant(matrix),true);
+      });
+
+      it('Checking mutant secuence 5 6X6, TWO DIAGONALS, should return TRUE', function() {
+        var matrix=["AATGCT","TAGCTG","TAATAT","ATTGGG","AGTGCT","CGTTCG"];
       assert.equal(mutantService.isMutant(matrix),true);
       });
 
