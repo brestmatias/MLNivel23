@@ -3,6 +3,10 @@ var mongoose = require('mongoose'),
   DNAModel = mongoose.model('DNA');
 
 exports.checkMutant = function(req, res) {
+        if(req.body.dna==undefined){
+            res.status(500).send('No DNA secuence detected!');
+            return;
+        }
         const dnaReq=req.body.dna;
         const mutant=mutantService.isMutant(dnaReq);
         
