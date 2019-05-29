@@ -9,15 +9,17 @@ var express = require('express'),
 mongoose.Promise = global.Promise;
 console.log('Conecting to Data Base...');
 const uri='mongodb://magneto:magneto1@ds261626.mlab.com:61626/mutantchecker';
-mongoose.connect(uri, {useNewUrlParser: true } ).then(
-  err => { console.error(err); }
-);; 
+mongoose.connect(uri, {useNewUrlParser: true } ).then(()=>{
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
+
+  var routes = require('./api/routes/mutantRoutes');
+  routes(app); 
+  app.listen(port);
+  console.log('MutantChecker RESTful API server started on: ' + port);
+
+}).catch(err => { 
+  console.error('DB conection error:', err.stack);
+  //process.exit(1);
+});
   
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-var routes = require('./api/routes/mutantRoutes');
-routes(app); 
-app.listen(port);
-
-console.log('MutantChecker RESTful API server started on: ' + port);
