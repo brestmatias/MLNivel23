@@ -23,7 +23,7 @@
   "homepage": "https://github.com/brestmatias/MLNivel23#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.5.11",
+    "mongoose": "^5.7.5",
     "nodemon": "^1.19.1"
   },
   "devDependencies": {
